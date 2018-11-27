@@ -5,7 +5,13 @@
 (require ffi/unsafe
          ffi/cvector)
 
-(define racket-camera-dylib-path (ffi-lib "escapi")) ;; for test
+(define racket-camera-dylib-path (ffi-lib "escapi3/bin/win64/escapi")) ;; for test
+
+(provide init-capture
+         deinit-capture
+         do-capture
+
+         make-SimpleCapParams)
 
 ;; Target buffer.
 (define-cstruct _SimpleCapParams
@@ -37,14 +43,12 @@
         is in use (i.e. between initCapture and deinitCapture).
        Do *not* free the target buffer, or change its pointer!
 |#
+
 (define init-capture
   (get-ffi-obj 'initCapture racket-camera-dylib-path
                (_fun [deviceno : _uint]
                      [a-params : _SimpleCapParams-pointer]
                      -> _int)))
-
-(define buf (make-cvector _uint8 (* 640 480 4))) ;; test
-(define strc (make-SimpleCapParams buf 480 640)) ;; test
 
 ;; deinitCapture closes the video capture device.
 (define deinit-capture
