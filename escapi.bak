@@ -1,7 +1,11 @@
 #lang racket
+(require "config.rkt")
+;(require racket-camera/config)
+
 (require ffi/unsafe
          ffi/cvector)
-(require "config.rkt")
+
+;(define racket-camera-dylib-path (ffi-lib "escapi3/bin/win64/escapi")) ;; for test
 
 (provide init-capture
          deinit-capture
@@ -18,6 +22,7 @@
    [mWidth _int]
    ; Buffer height
    [mHeight _int]))
+
 
 #|
 ; Sets up the ESCAPI DLL and the function pointers below. Call this first!
