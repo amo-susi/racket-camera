@@ -6,7 +6,8 @@
 (provide init-capture
          deinit-capture
          do-capture
+         count-capture-devices
+         is-capture-done
 
          buf->image
          get-capture)
-

@@ -1,16 +1,18 @@
 #lang racket
-
+(require "config.rkt")
 ;(require racket-camera/config)
 
 (require ffi/unsafe
          ffi/cvector)
 
-(define racket-camera-dylib-path (ffi-lib "escapi3/bin/win64/escapi")) ;; for test
+;(define racket-camera-dylib-path (ffi-lib "escapi3/bin/win64/escapi")) ;; for test
 
 (provide init-capture
          deinit-capture
          do-capture
-
+         count-capture-devices
+         is-capture-done
+         
          make-SimpleCapParams)
 
 ;; Target buffer.
