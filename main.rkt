@@ -10,4 +10,4 @@
          is-capture-done
 
          buf->image
-         get-capture)
+         single-capture)
