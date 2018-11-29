@@ -1,11 +1,11 @@
 #lang racket
+(provide buf->image
+         single-capture)
+
 (require picturing-programs)
 (require ffi/unsafe
          ffi/cvector)
 (require "escapi.rkt")
-
-(provide buf->image
-         single-capture)
 
 ;; cvector number number -> image
 (define (buf->image buf width height)

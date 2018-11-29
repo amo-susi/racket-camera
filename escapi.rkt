@@ -1,8 +1,4 @@
 #lang racket
-(require ffi/unsafe
-         ffi/cvector)
-(require "config.rkt")
-
 (provide init-capture
          deinit-capture
          do-capture
@@ -10,6 +6,10 @@
          is-capture-done
          
          make-SimpleCapParams)
+
+(require ffi/unsafe
+         ffi/cvector)
+(require "config.rkt")
 
 ;; Target buffer.
 (define-cstruct _SimpleCapParams

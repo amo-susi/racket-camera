@@ -16,4 +16,3 @@
 ;; Add the dll directory to the system path:
 (when (equal? (system-type 'os) 'windows)
   (putenv "PATH" (string-append (path->string (build-path racket-camera-path escapi-path)) ";" (getenv "PATH"))))
-
