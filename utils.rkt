@@ -7,13 +7,23 @@
 (provide buf->image
          single-capture)
 
-;; number number number -> image
+;; cvector number number -> image
 (define (buf->image buf width height)
   (local [(define (make-pixel x y)
             (color (cvector-ref buf (+ (+ (* x 4) 2) (* y width 4)))
                    (cvector-ref buf (+ (add1 (* x 4)) (* y width 4)))
                    (cvector-ref buf (+ (* x 4) (* y width 4)))))]
     (build-image width height make-pixel)))
+
+;; test
+(module+ test
+
+  (require rackunit)
+
+  (check-true
+   (let ([buf (list->cvector (make-list 400 255) _uint8)])
+     (image? (buf->image buf 10 10)))))
+
 
 ;; number number number -> image
 (define (single-capture cam-no width height)
@@ -29,3 +39,8 @@
             (deinit-capture cam-no))
            (sleep 0.5))
          (buf->image buf width height))))
+
+;; test
+(module+ test
+
+  (check-true (image? (single-capture 0 640 480))))

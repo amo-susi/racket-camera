@@ -11,8 +11,6 @@
          
          make-SimpleCapParams)
 
-(define BUFFSIZE 256)
-
 ;; Target buffer.
 (define-cstruct _SimpleCapParams
   ([mTargetBuf _cvector]
