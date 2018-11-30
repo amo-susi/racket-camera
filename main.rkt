@@ -6,8 +6,8 @@
          is-capture-done
 
          buf->image
-         single-capture)
+         single-capture
+         get-capture-device-name-list)
 
-(require picturing-programs)
 (require "escapi.rkt")
 (require "utils.rkt")

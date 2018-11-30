@@ -1,6 +1,7 @@
 #lang racket
 (provide buf->image
-         single-capture)
+         single-capture
+         get-capture-device-name-list)
 
 (require picturing-programs)
 (require ffi/unsafe
