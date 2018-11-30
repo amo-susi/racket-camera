@@ -41,8 +41,8 @@
   (check-true (list? (get-capture-device-name-list))))
 
 
-;; number number number -> image
-(define (single-capture cam-no width height)
+;; number #:width [number 640]  #:height [number 480] -> image
+(define (single-capture cam-no #:width [width 640] #:height [height 480])
   (and (< 0 (count-capture-devices))
        (< cam-no (count-capture-devices))
        (let* ([buf (make-cvector _uint8 (* width height 4))]
@@ -58,4 +58,5 @@
 
 ;; test
 (module+ test
-  (check-true (image? (single-capture 0 640 480))))
+  (check-true (image? (single-capture 0 #:width 640 #:height 480))
+              (image? (single-capture 0))))
