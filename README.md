@@ -1,6 +1,6 @@
 # racket-camera
 
-# Usage
+## Usage
 
 To use single shot capture (slowly but safety).
 ```racket
