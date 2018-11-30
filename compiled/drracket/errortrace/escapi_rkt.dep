@@ -1,0 +1,1 @@
+("7.1" ("588616f6f2f2ac091f9aea5286fe4ab4b7ea7d07" . "bff1b0db92d2a5c38d3786a011bc37b031ab142d") #"C:\\Users\\CC-147\\Documents\\lisp\\racket\\racket-camera\\config.rkt" (collects #"errortrace" #"errortrace-key.rkt") (collects #"ffi" #"cvector.rkt") (collects #"ffi" #"unsafe.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt"))

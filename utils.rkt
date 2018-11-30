@@ -40,7 +40,6 @@
 (module+ test
   (check-true (list? (get-capture-device-name-list))))
 
-
 ;; number #:width [number 640]  #:height [number 480] -> image
 (define (single-capture cam-no #:width [width 640] #:height [height 480])
   (and (< 0 (count-capture-devices))
