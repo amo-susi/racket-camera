@@ -24,6 +24,21 @@
    (let ([buf (list->cvector (make-list 400 255) _uint8)])
      (image? (buf->image buf 10 10)))))
 
+;; -> listof pair (number . string)
+(define (get-capture-device-name-list)
+  (when (< 0 (count-capture-devices))
+    (let ([buf (list->cvector (make-list 256 0) _byte)])
+      (for/list ([i (in-range (count-capture-devices))])
+        (cons i (bytes->string/utf-8 (apply bytes
+                                            (filter positive?
+                                                    (cvector->list
+                                                     (begin (get-capture-device-name i buf 256)
+                                                            buf))))))))))
+
+;; test
+(module+ test
+  (check-true (list? (get-capture-device-name-list))))
+
 
 ;; number number number -> image
 (define (single-capture cam-no width height)
@@ -42,5 +57,4 @@
 
 ;; test
 (module+ test
-
   (check-true (image? (single-capture 0 640 480))))

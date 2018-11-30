@@ -2,8 +2,9 @@
 (provide init-capture
          deinit-capture
          do-capture
-         count-capture-devices
          is-capture-done
+         count-capture-devices
+         get-capture-device-name
          
          make-SimpleCapParams)
 
