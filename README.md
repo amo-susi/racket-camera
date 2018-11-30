@@ -37,3 +37,7 @@ Copyright (c) 2018 Akihide Nano (an74abc@gmail.com)
 ## License
 
 Licensed under the LLGPL License.
+
+## Dependencies
+
+* ESCAPI under the unlicense
