@@ -1,4 +1,4 @@
-#ESCAPI
+# ESCAPI
 Extremely Simple Capture API
 
 Copyright (c)2015 Jari Komppa
