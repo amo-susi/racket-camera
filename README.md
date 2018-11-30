@@ -21,3 +21,15 @@ To use single shot capture (slowly but safety).
 Use the raco package install.
 
     $ raco pkg install https://github.com/a-nano/racket-camera.git
+
+## Author
+
+* Akihide Nano (an74abc@gmail.com)
+
+## Copyright
+
+Copyright (c) 2018 Akihide Nano (an74abc@gmail.com)
+
+## License
+
+Licensed under the LLGPL License.
